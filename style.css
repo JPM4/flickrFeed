@@ -1,0 +1,108 @@
+body {
+  background-color: #efeae2;
+  padding: 0px 50px;
+}
+
+#header {
+  margin-left: 40px;
+}
+
+#feedContainer {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.feedView {
+  border: 1px solid black;
+  height: 175px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  background-color: #dfb46c;
+}
+
+h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 799px) {
+  .dateTime {
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .authorLink {
+    margin-right: 8px;
+  }
+}
+
+.dateTime {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+#views {
+  margin: 40px;
+}
+
+#photoContainer {
+  border: 1px solid black;
+  padding: 8px;
+  background-color: #dfb46c;
+  max-height: 375px;
+}
+
+.feedImg {
+  float: left;
+  height: 175px;
+  width: 200px;
+  margin-right: 6px;
+}
+
+#back {
+  float: right;
+  width: 80px;
+  height: 58px;
+  padding: 10px;
+}
+
+#back:hover {
+  cursor: pointer;
+}
+
+#right {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  width: 70%;
+  overflow: hidden;
+  padding-left: 3px;
+}
+
+#left {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  overflow: auto;
+  padding-right: 3px;
+  width: 30%;
+  max-width: 350px;
+}
+
+#viewImg {
+  width: 100%;
+}
+
+.titleLink:visited {
+  color: #0000EE;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1 id="header">Flickr Public Feed</h1>
+    <div id="views">
+      <script type="text/template" id="feedTemplate">
+        <div id="feedContainer" class="container">
+          <% var i = 0; %>
+          <% photos.each(function(photo) { %>
+            <div class="feedView">
+              <a href="#/photo/<%= + i %>">
+                <img src="<%= photo.escape('img') %>" class="feedImg">
+              </a>
+              <a href="#/photo/<%= + i %>" class="titleLink">
+                <h2 class="title"><%= photo.escape('title') %></h2>
+              </a>
+              <p>
+                <a href="<%= photo.escape('author_link') %>"
+                  id="authorLink<%= i %>" target="_blank" class="authorLink">
+                  <%= photo.escape('author') %></a>
+                <span id="published<%= i %>" class="dateTime">
+                        Published: <%= photo.escape('published') %>
+                </span>
+                <a href="<%= photo.escape('link') %>"
+                   target="_blank">View on Flickr</a>
+              </p>
+            </div>
+            <% i++ %>
+          <% }); %>
+        </div>
+      </script>
+
+      <script type="text/template" id="photoTemplate">
+        <div id="photoContainer" class="container">
+          <a href="#/index/<%= tag %>">
+            <img src="assets/back%20button.png" id="back">
+          </a>
+          <h2>
+            <a href="<%= photo.escape('link') %>" target="_blank">
+              <%= photo.escape('title') %>
+            </a>
+          </h2>
+          <h4>
+            <a href="<%= photo.escape('author_link') %>" target="_blank">
+              <%= photo.escape('author') %>
+            </a>
+              |  Published: <%= photo.escape('published') %>
+          </h4>
+          <div id="anotherContainer">
+            <div id="left" class="clear">
+              <img src="<%= photo.escape('img') %>" class="viewImg">
+            </div>
+            <div id="right" class="clear">
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                 Donec odio. Quisque volutpat mattis eros. Nullam malesuada
+                 erat ut turpis. Suspendisse urna nibh, viverra non, semper
+                 suscipit, posuere a, pede.</p>
+
+              <p>Praesent dapibus, neque id cursus faucibus, tortor neque
+                 egestas augue, eu vulputate magna eros eu erat. Aliquam erat
+                 volutpat. Nam dui mi, tincidunt quis, accumsan porttitor,
+                 facilisis luctus, metus.</p>
+
+              <h6>Tags: <%= photo.get('tags') %></h6>
+            </div>
+          </div>
+        </div>
+      </script>
+    </div>
+
+    <script src="js/underscore-min.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
